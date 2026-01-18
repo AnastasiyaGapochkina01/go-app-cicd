@@ -46,7 +46,7 @@ pipeline {
                 script {
                     sh """
                         docker rm ${env.PRJ_NAME} -f || true
-                        docker run -d -it --name ${env.PRJ_NAME}
+                        docker run -d -it --name ${env.PRJ_NAME} ${env.REGISRTY}:${params.TAG}
                     """
                 }
             }
