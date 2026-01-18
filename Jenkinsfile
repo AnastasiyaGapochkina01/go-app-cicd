@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: "${env.GIT_URL}", credentialId: 'jenkins-key'
+                git branch: 'main', url: "${env.GIT_URL}", credentialsId: 'jenkins-key'
             }
         }
         stage('Run tests') {
