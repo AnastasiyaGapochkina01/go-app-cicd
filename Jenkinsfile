@@ -22,7 +22,9 @@ pipeline {
             steps {
                 script {
                     sh """
-                        go test ./
+                        go mod init simple-app
+                        go mod tidy
+                        go test ./ -v
                     """
                 }
             }
