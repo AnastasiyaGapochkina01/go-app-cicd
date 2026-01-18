@@ -22,8 +22,8 @@ pipeline {
             steps {
                 script {
                     sh """
-                        go mod init simple-app
-                        go mod tidy
+                        go mod init simple-app || true 
+                        go mod tidy || true
                         go test ./ -v
                     """
                 }
